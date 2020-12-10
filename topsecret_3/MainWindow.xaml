@@ -1,0 +1,71 @@
+﻿<Window x:Class="topsecret_3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:topsecret_3"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="MainWindow" Height="650" Width="900" WindowStartupLocation="CenterScreen">
+    <Grid Background="#ffdadada">
+        <Border MaxWidth ="1200" MaxHeight="1000" Margin="30 30 30 30" Background="#fff" VerticalAlignment="Stretch" Padding="30" CornerRadius="20">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
+            </Border.Effect>
+            <StackPanel >
+                <TextBlock HorizontalAlignment="Center" Text="Поиск товара по индексу или названию" FontSize="30" FontWeight="Bold"/>
+                <StackPanel >
+                    <TextBox x:Name="inputBox" materialDesign:HintAssist.Hint="Название или индекс товара" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                    <WrapPanel>
+                        <Button Margin="0 20 10 10" Content="Найти по индексу" Click="Button_Click"/>
+                        <Button Margin="30 10 0 0" Content="Найти по названию" Click="Button_Click_1"/>
+                    </WrapPanel>
+                </StackPanel>
+
+                <StackPanel>
+                    <StackPanel>
+                        <WrapPanel Margin="0 10 10 10">
+                            <TextBlock Text="Название товара:" />
+                            <TextBlock x:Name="productNameBox" Margin="20 0 0 0"/>
+                        </WrapPanel>
+                    </StackPanel>
+
+                    <StackPanel>
+                        <WrapPanel Margin="0 0 10 10">
+                            <TextBlock Text="Магазин:" />
+                            <TextBlock x:Name="shopNameBox" Margin="65 0 0 0"/>
+                        </WrapPanel>
+                    </StackPanel>
+
+                    <StackPanel>
+                        <WrapPanel Margin="0 0 10 10">
+                            <TextBlock Text="Цена:" Margin="0 0 10 10"/>
+                            <TextBlock x:Name="priceBox" Margin="75 0 0 0"/>
+                        </WrapPanel>
+                    </StackPanel>
+                </StackPanel>
+
+                <TextBlock HorizontalAlignment="Center" Margin ="20" Text="Добавление нового товара" FontSize="30" FontWeight="Bold"/>
+                <StackPanel>
+                    <WrapPanel Margin="0 0 0 10">
+                        <TextBlock Text="Название нового товара:" />
+                        <TextBox x:Name="newItemNameBox" MinWidth="300" Margin="10 0 0 0"/>
+                    </WrapPanel>
+
+                    <WrapPanel Margin="0 0 0 10">
+                        <TextBlock Text="Магазин нового товара:"/>
+                        <TextBox x:Name="newItemShopBox" MinWidth="300" Margin="15 0 0 0"/>
+                    </WrapPanel>
+
+                    <WrapPanel>
+                        <TextBlock Text="Цена нового товара (грн):"/>
+                        <TextBox x:Name="newItemPriceBox" MinWidth="300" Margin="5 0 0 0"/>
+                    </WrapPanel>
+
+                    <Button Content="Добавить товар" Margin="0 30 0 0" Click="Button_Click_2"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+        </Grid>
+</Window>
+

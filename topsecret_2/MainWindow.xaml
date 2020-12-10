@@ -1,0 +1,45 @@
+﻿<Window x:Class="topsecret_2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:topsecret_2"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Матрицы" Height="900" Width="1400" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
+    
+    <Grid Background="#ffdadada" >
+        <Border Background="#fff" Margin="50" Padding="30" CornerRadius="20">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
+            </Border.Effect>
+            <StackPanel>
+                <TextBlock HorizontalAlignment="Center" Text="Матрицы" FontSize="30" FontWeight="Bold" Margin="0 0 0 10"/>
+                <WrapPanel HorizontalAlignment="Center">
+                    <TextBox x:Name="Columns" Margin="0 0 20 20" MinWidth="200" materialDesign:HintAssist.Hint="Количество столбцов" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                    <TextBox x:Name="Rows" Margin="0 0 20 20" MinWidth="200" materialDesign:HintAssist.Hint="Количество строк" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                </WrapPanel>
+                <WrapPanel HorizontalAlignment="Center">
+                    <Button Content="Создать матрицу" Margin ="0 0 20 20" MinWidth="200" Click="Button_Click"/>
+                    <Button Content="Заполнить матрицу" Margin ="0 0 20 20" MinWidth="200" Click="Button_Click_2"/>
+                    <Button Content="Создать производную матрицу" Margin ="0 0 0 20" MinWidth="200" Click="Button_Click_1"/>
+                </WrapPanel>
+                <WrapPanel HorizontalAlignment="Center">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" MinWidth ="300" MinHeight="300" MaxHeight="500" MaxWidth ="500">
+                        <StackPanel >
+                            <TextBlock x:Name="BaseMatrix"  TextWrapping="WrapWithOverflow"/>
+                        </StackPanel>
+                    </ScrollViewer>
+
+                    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Margin="50 0 0 0" MinWidth ="300" MinHeight="300" MaxHeight="500" MaxWidth ="500" >
+                        <StackPanel >
+                            <TextBlock x:Name="Matrix" TextWrapping="WrapWithOverflow"/>
+                        </StackPanel>
+                    </ScrollViewer>
+                </WrapPanel>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
+
+        
